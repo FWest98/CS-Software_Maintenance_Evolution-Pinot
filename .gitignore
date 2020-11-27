@@ -1,0 +1,13 @@
+*.o
+.idea/*
+Makefile
+bin/*
+man/*
+share/*
+include/*
+src/.deps/*
+src/config.h
+config.log
+config.status
+src/jikes
+src/stamp-h1

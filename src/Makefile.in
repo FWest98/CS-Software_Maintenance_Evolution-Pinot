@@ -368,7 +368,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
 	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
 	  else :; fi; \
 	done
-	cd $(DESTDIR)$(bindir) && mv jikes pinot
+	cd "$(DESTDIR)$(bindir)" && mv jikes pinot
 
 uninstall-binPROGRAMS:
 	@$(NORMAL_UNINSTALL)

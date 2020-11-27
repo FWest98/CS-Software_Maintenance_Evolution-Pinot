@@ -2643,7 +2643,7 @@ void FlyweightAnalysis::DumpSummary()
 		Coutput << endl;
 	}
 }
-char *Role::TagName()
+const char *Role::TagName()
 {
 	switch(tag)
 	{
@@ -5315,7 +5315,7 @@ wchar_t* GenTable::getSuper(wchar_t* cls, wchar_t* pkg)
 	return (entry)?entry -> super_name:NULL;
 }
 
-vector<wchar_t*>* GenTable::getSuccessors(wchar_t* super, GenTable::Kind kind)
+vector<wchar_t*>* GenTable::getSuccessors(const wchar_t* super, GenTable::Kind kind)
 {
 	vector<wchar_t*>* list = NULL;
 	unsigned i;

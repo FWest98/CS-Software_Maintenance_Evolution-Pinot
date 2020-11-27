@@ -116,7 +116,7 @@ class Role
 		VariableSymbol *vsym;
 		AstArrayAccess *array_access;
 		RoleTag tag;
-		char *TagName();
+		const char *TagName();
 };
 class Snapshot
 {
@@ -540,7 +540,7 @@ public:
 		CREATE, // target being created
 		RETURN // target begin returned
 	};
-	State(StateKind k, vector<wchar_t*> *p) : kind(k), true_branch(false), false_branch(false), participants(p) {}
+	State(StateKind k, vector<wchar_t*> *p) : kind(k), true_branch(NULL), false_branch(NULL), participants(p) {}
 	~State(){}
 	void addTrueBranch(State* tb) {true_branch = tb;}
 	void addFalseBranch(State* fb) {false_branch = fb;}
@@ -687,7 +687,7 @@ public:
     wchar_t* getSuper(wchar_t*, wchar_t*);
     vector<wchar_t*>* getAncestors(Kind, wchar_t*, wchar_t*);
     vector<wchar_t*>* getInterfaces(wchar_t*, wchar_t*);
-    vector<wchar_t*>* getSuccessors(wchar_t*, Kind);
+    vector<wchar_t*>* getSuccessors(const wchar_t*, Kind);
     bool hasSuccessors(wchar_t*, Kind);
     Gen::Kind getKind(wchar_t*, wchar_t*);
     wchar_t* getClassNameAt(int i) {return (*table)[i] -> class_name; }
